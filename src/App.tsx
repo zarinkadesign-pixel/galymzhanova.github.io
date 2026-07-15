@@ -9,7 +9,7 @@ import './App.css'
 export default function App() {
   const [loaded, setLoaded] = useState(false)
   const handleLoaded = useCallback(() => setLoaded(true), [])
-
+  
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 5000)
     return () => clearTimeout(timer)
@@ -29,7 +29,7 @@ export default function App() {
         <header className="overlay-header">
           <div className="logo">
             <span className="logo-dot" />
-            <span className="logo-text">AMAI</span>
+            <span className="logo-text">ZARINA GALYMZHANOVA</span>
           </div>
           <nav className="nav">
             <a href="#services">УСЛУГИ</a>
@@ -44,26 +44,26 @@ export default function App() {
         <div className="hero-content-inner">
           <p className="hero-eyebrow">
             <span className="hero-eyebrow-line" />
-            AESTHETIC MIND AI — SMM & PRODUCT AGENCY
+            ZARINA GALYMZHANOVA — DESIGN & PRODUCTION EXPERT
           </p>
           <h1 className="hero-title">
-            <span>Создаём бренды</span>
-            <span>в <em>латентном</em> пространстве —</span>
-            <span>выводим их в продажи.</span>
+            <span>Создаю бренды,</span>
+            <span>которые <em>продают</em></span>
+            <span>без слов.</span>
           </h1>
           <p className="hero-lede">
-            Сайты, приложения, автоматизация, SMM и продюсирование — единая система, которая работает 24/7.
+            Дизайн фирменного стиля, сайты и лендинги, автоматизация бизнес-задач, продюсирование и обучение экспертов. Полный цикл упаковки для high-ticket продаж.
           </p>
           <a href="#contact" className="hero-cta group-hover">
-            Оставить заявку
+            Обсудить проект
             <span className="arrow-slide">→</span>
           </a>
         </div>
 
         <div className="hero-stats-inner">
-          <div className="stat"><span className="stat-value">47+</span><span className="stat-label">ПРОЕКТОВ</span></div>
-          <div className="stat"><span className="stat-value">12</span><span className="stat-label">ЭКСПЕРТОВ</span></div>
-          <div className="stat"><span className="stat-value">98%</span><span className="stat-label">ДОВОЛЬНЫ</span></div>
+          <div className="stat"><span className="stat-value">50+</span><span className="stat-label">ПРОЕКТОВ</span></div>
+          <div className="stat"><span className="stat-value">5 ЛЕТ</span><span className="stat-label">ОПЫТА</span></div>
+          <div className="stat"><span className="stat-value">95%</span><span className="stat-label">ДОВОЛЬНЫ</span></div>
         </div>
 
         <div className="scroll-cue">

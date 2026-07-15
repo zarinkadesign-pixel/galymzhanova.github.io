@@ -45,7 +45,7 @@ function AnimCounter({ target, suffix }: { target: number; suffix: string }) {
 /* ─── Manifesto ─── */
 export const Manifesto: FC = () => {
   const textRef = useRef<HTMLParagraphElement>(null)
-  const text = 'Мы не «ведём соцсети». Мы проектируем систему, в которой бренд думает, говорит и продаёт сам — двадцать четыре часа в сутки.'
+  const text = 'Я не просто создаю дизайн. Я раскрываю суть вашего бренда и превращаю её в систему, которая продаёт без слов — двадцать четыре часа в сутки.'
 
   useEffect(() => {
     const el = textRef.current
@@ -54,7 +54,7 @@ export const Manifesto: FC = () => {
     for (const ch of text) {
       const span = document.createElement('span')
       span.className = 'char'
-      span.textContent = ch === ' ' ? ' ' : ch
+      span.textContent = ch === ' ' ? ' ' : ch
       el.appendChild(span)
     }
     const chars = el.querySelectorAll('.char')
@@ -107,7 +107,7 @@ export const GuaranteesStrip: FC = () => (
 /* ─── Services ─── */
 export const Services: FC = () => (
   <section className="services-section" id="services">
-    <span className="section-num">02 / Что мы делаем</span>
+    <span className="section-num">02 / Что я делаю</span>
     <div className="services-grid">
       {SERVICES.map((s, i) => {
         const { ref, vis } = useInView()
@@ -154,7 +154,7 @@ export const Process: FC = () => (
     <div className="process">
       <div className="head">
         <span className="eyebrow"><span className="sq" />Как мы работаем</span>
-        <h2 className="display shimmer">Пять шагов <em>от первого созвона</em> до первой продажи</h2>
+        <h2 className="display shimmer">Пять шагов <em>от знакомства</em> до первой продажи</h2>
       </div>
       <div className="process-steps">
         {STEPS.map((step, i) => {
@@ -176,22 +176,25 @@ export const Process: FC = () => (
 export const CasesSection: FC = () => (
   <section className="cases" id="cases">
     <span className="section-num">04 / Кейсы</span>
-    <span className="eyebrow"><span className="sq" />Они уже выросли с нами</span>
-    <h2 className="display shimmer">Кейсы <em>наших клиентов</em></h2>
+    <span className="eyebrow"><span className="sq" />Они уже выросли со мной</span>
+    <h2 className="display shimmer">Кейсы <em>моих клиентов</em></h2>
     <div className="cases-grid">
-      {CASES.map((c, i) => (
-        <div className="case-container" key={i}>
-          <article className={`case glass`} style={{ top: 80 + i * 28 }}>
-            <div className={`case-art case-art-${i + 1}`} />
-            <span className="tag glass">{c.tag}</span>
-            <span className="metric">{c.metric}<small>{c.metricLabel}</small></span>
-            <div className="case-content">
-              <h3 className="shimmer">{c.title}</h3>
-              <p>{c.desc}</p>
-            </div>
-          </article>
-        </div>
-      ))}
+      {CASES.map((c, i) => {
+        const { ref, vis } = useInView()
+        return (
+          <div ref={ref} className="case-container" key={i}>
+            <article className={`case glass`} style={{ top: 80 + i * 28 }}>
+              <div className={`case-art case-art-${i + 1}`} />
+              <span className="tag glass">{c.tag}</span>
+              <span className="metric">{c.metric}<small>{c.metricLabel}</small></span>
+              <div className="case-content">
+                <h3 className="shimmer">{c.title}</h3>
+                <p>{c.desc}</p>
+              </div>
+            </article>
+          </div>
+        )
+      })}
     </div>
   </section>
 )
@@ -200,7 +203,7 @@ export const CasesSection: FC = () => (
 export const Pricing: FC = () => (
   <section className="pricing" id="pricing">
     <span className="section-num">05 / Форматы</span>
-    <span className="eyebrow"><span className="sq" />Как с нами работать</span>
+    <span className="eyebrow"><span className="sq" />Как со мной работать</span>
     <h2 className="display shimmer">Три формата <em>сотрудничества</em></h2>
     <div className="pricing-grid">
       {TIERS.map((tier, i) => {
@@ -253,7 +256,7 @@ export const Contact: FC = () => {
   const [msg, setMsg] = useState('')
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    setMsg('Заявка отправлена! Свяжемся в течение 24 часов.')
+    setMsg('Заявка отправлена! Свяжусь с вами в течение 24 часов.')
   }
   return (
     <section className="contact" id="contact">
@@ -261,8 +264,8 @@ export const Contact: FC = () => {
       <div className="contact-inner">
         <div>
           <span className="eyebrow"><span className="sq" />Оставить заявку</span>
-          <h2>Расскажите <em>о задаче —</em><br />пришлём разбор<br />за <em>24 часа</em>.</h2>
-          <p className="lede">Без шаблонных КП. Сначала смотрим продукт, аудиторию и текущие воронки.</p>
+          <h2>Расскажите <em>о задаче —</em><br />пришлю разбор<br />за <em>24 часа</em>.</h2>
+          <p className="lede">Без шаблонных КП. Сначала смотрю продукт, аудиторию и текущие воронки.</p>
           <div className="contact-channels">
             <div className="channel"><small>Telegram</small><a href="https://t.me/ZARINKA_DESIGN" target="_blank" rel="noopener">@ZARINKA_DESIGN</a></div>
             <div className="channel"><small>Бот компании</small><a href="https://t.me/ME_AMAI_BOT" target="_blank" rel="noopener">@ME_AMAI_BOT</a></div>
@@ -275,7 +278,7 @@ export const Contact: FC = () => {
           <div className="field">
             <label>Что нужно сделать</label>
             <div className="checkboxes">
-              {['Сайт / Лендинг', 'Приложение', 'Автоматизация', 'SMM & продюс.', 'Запуск курса'].map((item, i) => (
+              {['Дизайн & стиль', 'Сайт / Лендинг', 'Автоматизация', 'Продюсирование', 'Запуск курса'].map((item, i) => (
                 <div className="checkbox" key={i}>
                   <input type="checkbox" id={`c${i}`} name="need" value={item} />
                   <label htmlFor={`c${i}`} className="glass">{item}</label>
@@ -309,13 +312,13 @@ export const Contact: FC = () => {
 export const Footer: FC = () => (
   <footer>
     <div className="f-top">
-      <div className="f-mark">AMA<em>I</em></div>
+      <div className="f-mark">ZARINA<em>GALYMZHANOVA</em></div>
       <div className="f-col"><h5>Навигация</h5><ul><li><a href="#services">Услуги</a></li><li><a href="#process">Процесс</a></li><li><a href="#cases">Кейсы</a></li><li><a href="#pricing">Форматы</a></li></ul></div>
       <div className="f-col"><h5>Контакты</h5><ul><li><a href="https://t.me/ZARINKA_DESIGN" target="_blank" rel="noopener">@ZARINKA_DESIGN</a></li><li><a href="https://t.me/ME_AMAI_BOT" target="_blank" rel="noopener">@ME_AMAI_BOT</a></li><li><a href="https://amai.com.ru" target="_blank" rel="noopener">amai.com.ru</a></li></ul></div>
     </div>
     <div className="f-bottom">
-      <span>© 2026 AMAI — Aesthetic Mind AI</span>
-      <span>МЫ СОЗДАЁМ БУДУЩЕЕ</span>
+      <span>© 2026 ZARINA GALYMZHANOVA</span>
+      <span>СОЗДАЮ БРЕНДЫ, КОТОРЫЕ ПРОДАЮТ</span>
     </div>
   </footer>
 )
